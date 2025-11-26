@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main-container">
+        <header>
+            <div class="logo">
+                <span class="x">X</span>
+                <span class="o">O</span>
+            </div>
+            <div class="turn-indicator" id="turn-indicator">
+                <span class="turn-icon">X</span> TURN
+            </div>
+            <button class="restart-btn" id="restart-btn" aria-label="Restart Game">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                    <path d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.01-.25 1.97-.7 2.8l1.46 1.46C19.54 15.03 20 13.57 20 12c0-4.42-3.58-8-8-8zm0 14c-3.31 0-6-2.69-6-6 0-1.01.25-1.97.7-2.8L5.24 7.74C4.46 8.97 4 10.43 4 12c0 4.42 3.58 8 8 8v3l4-4-4-4v3z"/>
+                </svg>
+            </button>
+        </header>
+
+        <main class="game-board" id="game-board">
+            <div class="cell" data-index="0"></div>
+            <div class="cell" data-index="1"></div>
+            <div class="cell" data-index="2"></div>
+            <div class="cell" data-index="3"></div>
+            <div class="cell" data-index="4"></div>
+            <div class="cell" data-index="5"></div>
+            <div class="cell" data-index="6"></div>
+            <div class="cell" data-index="7"></div>
+            <div class="cell" data-index="8"></div>
+        </main>
+
+        <div class="scores">
+            <div class="score-box x-score">
+                <span class="label">X (YOU)</span>
+                <span class="value" id="score-x">0</span>
+            </div>
+            <div class="score-box ties">
+                <span class="label">TIES</span>
+                <span class="value" id="score-ties">0</span>
+            </div>
+            <div class="score-box o-score">
+                <span class="label">O (CPU)</span>
+                <span class="value" id="score-o">0</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Game Over -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal">
+            <p class="modal-subtitle" id="modal-subtitle">YOU WON!</p>
+            <h2 class="modal-title" id="modal-title">
+                <span class="winner-icon">X</span> TAKES THE ROUND
+            </h2>
+            <div class="modal-buttons">
+                <button class="btn-quit" id="btn-quit">QUIT</button>
+                <button class="btn-next-round" id="btn-next-round">NEXT ROUND</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
